@@ -1,4 +1,4 @@
-`Adapter / Wrapper`__
+__`Adapter / Wrapper`__
 =====================
 
 Purpose
@@ -18,10 +18,8 @@ Examples
 
 UML Diagram
 -----------
+![screenshot of sample](https://cdn-images-1.medium.com/max/1200/1*eo64K_cBGb0vZ85qDJlnKA.png)
 
-.. image:: uml/uml.png
-   :alt: Alt Adapter UML Diagram
-   :align: center
 
 Code
 ----
