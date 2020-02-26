@@ -2,6 +2,7 @@
 title: Anko post
 author: anko
 layout: post
+date: 2013-06-05
 ---
 # Сосите все мой писюн, суки!
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique sunt suscipit aperiam, exercitationem illo temporibus blanditiis, itaque dolores. Alias quis veritatis aliquid illo provident, magni quos animi iusto aliquam minus.Minus maxime quo ipsum nisi dolore minima temporibus earum non deleniti illum. 
