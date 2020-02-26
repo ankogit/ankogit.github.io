@@ -17,7 +17,8 @@ title: ankogit
 			<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
 		{% endif %}
 
-		<div class="post-content">{{ page.date | date: "%b %d, %Y" }} - {{post.author}}</div>
+		<div class="post-content">{{ post.excerpt }}</div>
+		<div class="post-content">{{ post.date | date: "%b %d, %Y" }} - {{post.author}}</div>
 
 	</article>
 
