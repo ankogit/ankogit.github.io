@@ -3,7 +3,7 @@ url: http://example.org
 description: I`m learn and teach
 
 permalink: /:year/:month/:day/:title/
-paginate: 10
+paginate: 5
 
 gems: [jekyll-paginate, jekyll-coffeescript]
 exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
