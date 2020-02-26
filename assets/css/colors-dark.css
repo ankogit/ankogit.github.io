@@ -1,36 +1,33 @@
 html, body {
 	background-color: #24292e;
-	color: #839496;
+	color: rgba(255,255,255,0.65);
 }
 
 a, a:visited, a:active {
-	color: #2aa198;
-	border-color: #073642;
+	color: #9f7be1;
+	border-color: #9f7be1;
 }
 
 a:hover {
-	background-color: #073642;
-	border-color: #073642;
-	color: #2aa198;
+	text-decoration: underline;
+	color: #9f7be1;
 }
 
 h1, h2, h3 {
-	color: #9f7be1;
+	color: #fff;
 }
 
 h1 a:active {
 	color: #9f7be1;
-	text-decoration: underline;
 }
 
 h1 a:hover {
-	background-color: #073642;
-	border-color: #073642;
+	text-decoration: underline;
 	color: #9f7be1;
 }
 
 article h1 a.anchor {
-	color: #2aa198;
+	color: #9f7be1;
 }
 
 blockquote {
@@ -38,7 +35,7 @@ blockquote {
 }
 
 #sidebar a:hover {
-	color: #2aa198;
+	color: #9f7be1;
 	background-color: #073642;
 }
 
