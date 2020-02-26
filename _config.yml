@@ -1,62 +1,38 @@
-# Developer's Note: This is a sample _config.yml file offered with
-# jekyll-theme-prologue for your convenience. To use it, move it to your
-# project's root directory. Please note that the following lines are
-# NECESSARY for Prologue to work correctly:
-#
-# theme: jekyll-theme-prologue
-# collections: [sections]
-#
-# They activate the theme and tell Jekyll to find your homepage content
-# in /_sections. Note where "sections" starts with an underscore
-# and where it doesn't. The social settings will make links to
-# Twitter, etc., but only if you give the URL.
-#
-# Also, be sure to customize url and baseurl for your site.
-#
-# ---------------------------------------------------------------
-#
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: Anko`s site
-subtitle: I`m learn and teach
-description: >- # this means to ignore newlines until "baseurl:"
-  This is the demo site for a Jekyll theme version of
-  HTML5 UP's sleek, responsive site template Prologue.
-author: Anko
-email: your-email@example.com
-avatar: assets/images/avatar.jpg
+title: Paper Theme
+description: > # this means to ignore newlines until "baseurl:"
+  A gentle theme for Jekyll utilising material design.
+baseurl: "/" # the subpath of your site, e.g. /blog/
+# url: "http://yourdomain.com" # the base hostname & protocol for your site you most probably don't need to set it
 
-# You'll want to customize url and baseurl for your own site:
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
+# Build settings
+markdown: kramdown
+paginate: 5 # pagination based on number of posts
+paginate_path: "page/:num"
+highlighter: pygments
+gems: [jekyll-paginate, jekyll-coffeescript]
 
-# Social settings
-facebook_url:
-github_url:
-googleplus_url:
-instagram_url:
-linkedin_url:
-pinterest_url:
-slack_url:
-twitter_url:
+# comments
+disqus: # add disqus shortname here
 
-# Google Analytics Tracking ID goes here:
-google_analytics:
+# author info
+# add your appropriate info here
+author: # your name
+bio:    # your bio
+email:
+email_md5: # md5 hash of your email
+twitter_username:
+github_username:
 
-# The following settings are NECESSARY for the Prologue theme to run:
-remote_theme: chrisbobbe/jekyll-theme-prologue
-# theme: ankogit/ankogit.github.io
-collections: [sections]
+# Theming options
+# These settings are mandatory.
+theme:              'blue-pink'
+# drawer theming
+drawer:
+  text_color:       'grey-600'
+  header_color:     'blue-500'
+  navigation_color: 'grey-200'
+# footer theming
+footer:
+  text_color: 'blue-grey-200'
+  color: 'blue-grey-600'
