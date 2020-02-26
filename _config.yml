@@ -8,6 +8,5 @@ paginate: 10
 gems: [jekyll-paginate, jekyll-coffeescript]
 exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
 
-highlighter: pygments
 
 
