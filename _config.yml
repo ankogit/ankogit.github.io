@@ -1,38 +1,13 @@
-# Site settings
-title: "@ankogit"
-description: > # this means to ignore newlines until "baseurl:"
-  I`m learn and teach
-baseurl: "//" # the subpath of your site, e.g. /blog/
-# url: "http://yourdomain.com" # the base hostname & protocol for your site you most probably don't need to set it
+name: Solar Theme
+url: http://example.org
+description: A stylish blog using the Solarized color palette
 
-# Build settings
-markdown: kramdown
-paginate: 5 # pagination based on number of posts
-paginate_path: "/page/:num"
-highlighter: pygments
-gems: [jekyll-paginate, jekyll-coffeescript]
+permalink: /:year/:month/:day/:title/
+paginate: 10
 
-# comments
-disqus: # add disqus shortname here
+gems: [jekyll-paginate]
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
 
-# author info
-# add your appropriate info here
-author: ankogit
-bio:    # your bio
-email: "ya.tolik-a@yandex.ru"
-email_md5: # md5 hash of your email
-twitter_username: 
-github_username: ankogit
 
-# Theming options
-# These settings are mandatory.
-theme:              'blue-pink'
-# drawer theming
-drawer:
-  text_color:       'grey-600'
-  header_color:     'blue-500'
-  navigation_color: 'grey-200'
-# footer theming
-footer:
-  text_color: 'blue-grey-200'
-  color: 'blue-grey-600'
+
+
