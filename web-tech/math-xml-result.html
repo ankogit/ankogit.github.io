@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script id="xmlContent" type="text/xml">
+		<строка>
+		<операнд>σ</операнд>
+		<оператор>=</оператор>
+		<корень>
+		<строка>
+		<дробь>
+		<строка>
+		<число>1</число>
+		</строка>
+		<строка>
+		<операнд>N</операнд>
+		</строка>
+		</дробь>
+		<строка>
+		<низверх>
+		<строка>
+		<оператор>∑</оператор>
+		</строка>
+		<строка>
+		<операнд>i</операнд>
+		<оператор>=</оператор>
+		<число>1</число>
+		</строка>
+		<строка>
+		<операнд>N</операнд>
+		</строка>
+		</низверх>
+		<строка>
+		<верх>
+		<строка>
+		<оператор >(</оператор>
+		<низ>
+		<строка>
+		<операнд>x</операнд>
+		</строка>
+		<строка>
+		<операнд>i</операнд>
+		</строка>
+		</низ>
+		<оператор>−</оператор>
+		<операнд>μ</операнд>
+		<оператор >)</оператор>
+		</строка>
+		<строка>
+		<число>2</число>
+		</строка>
+		</верх>
+		</строка>
+		</строка>
+		</строка>
+		</корень>
+		<оператор>.</оператор>
+		</строка>
+	</script>
+	<script id="xslStylesheet" type="text/xsl">
+		<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+            <xsl:template match="/">
+             <math xmlns="http://www.w3.org/1998/Math/MathML">
+               <xsl:apply-templates />
+             </math>
+           </xsl:template>
+
+			<xsl:template match="корень">
+		      <msqrt>
+		         <xsl:apply-templates select="*"/>
+		      </msqrt>
+		   </xsl:template>
+
+		   <xsl:template match="строка">
+		      <mrow>
+		         <xsl:apply-templates select="*"/>
+		      </mrow>
+		   </xsl:template>
+
+		   <xsl:template match="дробь">
+		      <mfrac>
+		         <xsl:apply-templates select="*"/>
+		      </mfrac>
+		   </xsl:template>
+
+		   <xsl:template match="операнд">
+		      <mi>
+		         <xsl:value-of select="." />
+		      </mi>
+		   </xsl:template>
+
+		   <xsl:template match="оператор">
+		      <mo>
+		         <xsl:value-of select="." />
+		      </mo>
+		   </xsl:template>
+
+		   <xsl:template match="число">
+		      <mn>
+		         <xsl:value-of select="." />
+		      </mn>
+		   </xsl:template>
+
+		   <xsl:template match="низверх">
+		      <munderover>
+		         <xsl:apply-templates select="*"/>
+		      </munderover>
+		   </xsl:template>
+
+		   <xsl:template match="верх">
+		      <msup>
+		         <xsl:apply-templates select="*"/>
+		      </msup>
+		   </xsl:template>
+
+		   <xsl:template match="низ">
+		      <msub>
+		         <xsl:apply-templates select="*"/>
+		      </msub>
+		   </xsl:template>
+
+		</xsl:stylesheet>
+	</script>
+
+
+	<div id="result"></div>
+
+	<script>
+		window.addEventListener("load", (event) => {
+			const domParser = new DOMParser()
+			const xsltProcessor = new XSLTProcessor()
+
+			const xsltStylesheet = document.getElementById("xslStylesheet")
+			const xsltStylesheetNode = domParser.parseFromString(xsltStylesheet.textContent, 'text/xml')
+
+			const xmlString = document.getElementById('xmlContent')
+			const xmlDocument = domParser.parseFromString(xmlString.textContent, 'text/xml')
+
+			xsltProcessor.importStylesheet(xsltStylesheetNode)
+
+			document.getElementById('result').innerHTML = new XMLSerializer().serializeToString(xsltProcessor.transformToDocument(xmlDocument))
+		});
+	</script>
+</body>
+</html>
