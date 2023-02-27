@@ -10,7 +10,7 @@ title: Результаты курса ITMO "Веб-Технологии"
 	{% for post in site.posts %}
         {% if post.type == "webtech" %}
             <article class="post">
-                <h1><a href="{{ webtech.url }}">{{ webtech.title }}</a></h1>
+                <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
             </article>
         {% endif %}
 	{% endfor %}

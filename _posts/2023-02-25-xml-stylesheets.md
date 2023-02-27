@@ -2,7 +2,7 @@
 title: Практическое задание по преобразованию XML 
 author: anko
 layout: post
-date: 2022-02-25
+date: 2023-02-25
 type: webtech
 ---
 
