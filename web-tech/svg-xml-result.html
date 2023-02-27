@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script id="xmlContent" type="text/xml">
+		<root>
+		 <графика ширина="640" высота="480">
+			 <эллипс id="графика_1" заливка="rgba(255,0,0,0.5)" ободок="white" ширина-ободка="5" cx="206" cy="139" rx="100" ry="100"/>
+			 <эллипс id="графика_2" заливка="rgba(0,0,255,0.5)" ободок="white" ширина-ободка="5" cx="108" cy="111" rx="100" ry="100"/>
+			 <эллипс id="графика_3" заливка="rgba(0,255,0,0.5)" ободок="white" ширина-ободка="5" cx="134" cy="215" rx="100" ry="100"/>
+		 </графика>
+		</root>
+	</script>
+	<script id="xslStylesheet" type="text/xsl">
+		<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+			  <xsl:template match="root">
+			    <svg width="{графика/@ширина}" height="{графика/@высота}">
+			      <xsl:apply-templates select="графика/эллипс"/>
+			    </svg>
+			  </xsl:template>
+
+			  <xsl:template match="эллипс">
+			    <ellipse id="{@id}" fill="{@заливка}" stroke="{@ободок}" stroke-width="{@ширина-ободка}" cx="{@cx}" cy="{@cy}" rx="{@rx}" ry="{@ry}"/>
+			  </xsl:template>
+			</xsl:stylesheet>
+
+	</script>
+
+
+	<div id="result"></div>
+
+	<script>
+		window.addEventListener("load", (event) => {
+			const domParser = new DOMParser()
+			const xsltProcessor = new XSLTProcessor()
+
+			const xsltStylesheet = document.getElementById("xslStylesheet")
+			const xsltStylesheetNode = domParser.parseFromString(xsltStylesheet.textContent, 'text/xml')
+
+			const xmlString = document.getElementById('xmlContent')
+			const xmlDocument = domParser.parseFromString(xmlString.textContent, 'text/xml')
+
+			xsltProcessor.importStylesheet(xsltStylesheetNode)
+
+			document.getElementById('result').innerHTML = new XMLSerializer().serializeToString(xsltProcessor.transformToDocument(xmlDocument))
+		});
+	</script>
+</body>
+</html>
